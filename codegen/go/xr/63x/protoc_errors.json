@@ -1,0 +1,22 @@
+{
+    "Cisco-IOS-XR-icpe-sdacp-oper:augment[1]/sdacp-discovery2s/sdacp-discovery2": {
+        "msg": "icpe_sdacp_cfg_sfl.proto:205:45: Expected \";\".",
+        "proto": "cisco_ios_xr_icpe_sdacp_oper/augment[1]/sdacp_discovery2s/sdacp_discovery2/icpe_sdacp_cfg_sfl.proto"
+    },
+    "Cisco-IOS-XR-icpe-sdacp-oper:augment[2]/icpe-dpms/icpe-dpm": {
+        "msg": "dpm_oper_if.proto:205:45: Expected \";\".",
+        "proto": "cisco_ios_xr_icpe_sdacp_oper/augment[2]/icpe_dpms/icpe_dpm/dpm_oper_if.proto"
+    },
+    "Cisco-IOS-XR-icpe-sdacp-oper:augment[3]/sdacp-controls/sdacp-control": {
+        "msg": "icpe_cpm_oper_sat.proto:205:45: Expected \";\".",
+        "proto": "cisco_ios_xr_icpe_sdacp_oper/augment[3]/sdacp_controls/sdacp_control/icpe_cpm_oper_sat.proto"
+    },
+    "Cisco-IOS-XR-mpls-te-oper:mpls-te-standby/soft-preemption/statistics": {
+        "msg": "mpls_te_soft_preemption_stats.proto: The JSON camel-case name of field \"torndown_soft_preempted_ls_ps\" conflicts with field \"torn_down_soft_preempted_ls_ps\". This is not allowed in proto3.",
+        "proto": "cisco_ios_xr_mpls_te_oper/mpls_te_standby/soft_preemption/statistics/mpls_te_soft_preemption_stats.proto"
+    },
+    "Cisco-IOS-XR-mpls-te-oper:mpls-te/soft-preemption/statistics": {
+        "msg": "mpls_te_soft_preemption_stats.proto: The JSON camel-case name of field \"torndown_soft_preempted_ls_ps\" conflicts with field \"torn_down_soft_preempted_ls_ps\". This is not allowed in proto3.",
+        "proto": "cisco_ios_xr_mpls_te_oper/mpls_te/soft_preemption/statistics/mpls_te_soft_preemption_stats.proto"
+    }
+}

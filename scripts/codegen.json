@@ -1,0 +1,15 @@
+{
+    "root": "../",
+    "debug": false,
+    "baseURL": "github.com/cisco-ie/cisco-proto",
+    "codegen": {
+        "prefix": "codegen/",
+        "languages": {
+            "go": {
+                "package": "telemetry",
+                "main": "mdt_telemetry.go",
+                "mapFileGlob": "*_yang2proto_map.json"
+            }
+        }
+    }
+}
