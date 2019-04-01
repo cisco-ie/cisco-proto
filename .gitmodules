@@ -1,0 +1,6 @@
+[submodule "proto/nx/nx-telemetry-proto"]
+	path = proto/nx/nx-telemetry-proto
+	url = https://github.com/CiscoDevNet/nx-telemetry-proto
+[submodule "proto/xr"]
+	path = proto/xr
+	url = https://github.com/ios-xr/model-driven-telemetry.git
