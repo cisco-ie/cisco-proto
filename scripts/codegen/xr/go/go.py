@@ -104,9 +104,9 @@ class Go(Codegen):
             codegen_root = os.path.dirname(codegen_file_path)
             if not os.path.isdir(codegen_root):
                 try:
-                    logging.debug('Codegen directory %s does not exist - creating.', proto_codegen_root)
-                    os.makedirs(os.path.dirname(proto_codegen_filename), exist_ok=True)
-                except:
+                    logging.debug('Codegen directory %s does not exist - creating.', codegen_root)
+                    os.makedirs(os.path.dirname(codegen_root), exist_ok=True)
+                except Exception as e:
                     logging.error('Error creating codegen directory %s!', codegen_root)
                     add_error(entry['encoding_path'], entry['file'], 'Codegen directory creation error!')
                     continue
@@ -176,6 +176,7 @@ class Go(Codegen):
             import_prefix=import_prefix
         )
         logging.info('Testing generated Go code: %s', command)
+        test_err_filename = os.path.join(root_codegen_release, 'test_failure.log')
         try:
             results = subprocess.check_output(
                 command,
@@ -183,10 +184,11 @@ class Go(Codegen):
                 stderr=subprocess.STDOUT
             )
             logging.info('Go test passed!')
-            logging.info(results)
+            logging.info(results.decode('utf-8').strip())
+            if os.path.isfile(test_err_filename):
+                os.remove(test_err_filename)
         except subprocess.CalledProcessError as e:
             error_msg = e.output.decode('utf-8').strip()
-            test_out_filename = os.path.join(root_codegen_release, 'test_failure.log')
-            logging.error('Go test failed! Writing output to %s', test_out_filename)
-            with open(test_out_filename, 'w') as test_out_fd:
-                test_out_fd.write(error_msg)
+            logging.error('Go test failed! Writing output to %s', test_err_filename)
+            with open(test_err_filename, 'w') as test_err_fd:
+                test_err_fd.write(error_msg)
