@@ -17,12 +17,10 @@ limitations under the License.
 package {{ package }}
 
 import (
-	"encoding/json"
 	"fmt"
 	"testing"
 	"time"
 	"math/rand"
-	"io/ioutil"
 	"reflect"
 {%- for path in paths %}
 	{{ path['package'] }} "{{ import_prefix }}/{{ path['path'] }}"
